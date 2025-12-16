@@ -2,7 +2,7 @@ name: auto commit and push
 
 on:
   schedule:
-    - cron: '40 14 * * *'
+    - cron: '49 14 * * *'
   workflow_dispatch:
 
 jobs:
@@ -25,4 +25,4 @@ jobs:
       - name: push code
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push
+        run: git push origin main
