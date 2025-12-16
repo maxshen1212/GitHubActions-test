@@ -26,3 +26,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: git push
+      - name: use action to auto commit and push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Automated commit on $(date)"
+          branch: main
+          commit_user_name: GitHub Actions
+          commit_user_email: actions@github.com
