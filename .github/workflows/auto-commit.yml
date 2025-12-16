@@ -2,7 +2,7 @@ name: auto commit and push
 
 on:
   schedule:
-    - cron: '35 14 * * *'
+    - cron: '38 14 * * *'
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
         run: echo "Update on ${date}" >> update.log
 
       - name: commit changes
-        run:
+        run: |
           git config --global user.email "maxshen1212@gmail.com"
           git config --global user.name "Chih-Han Shen"
           git add .
