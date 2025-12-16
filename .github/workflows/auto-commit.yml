@@ -2,7 +2,7 @@ name: auto commit and push
 
 on:
   schedule:
-    - cron: '40 15 * * *'
+    - cron: '*/5 * * * *'
   # workflow_dispatch:
 
 jobs:
