@@ -1,0 +1,23 @@
+{
+  "name": "githubactions-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxshen1212/GitHubActions-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxshen1212/GitHubActions-test/issues"
+  },
+  "homepage": "https://github.com/maxshen1212/GitHubActions-test#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
