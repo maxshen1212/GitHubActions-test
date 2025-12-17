@@ -2,7 +2,7 @@ name: download and extract
 
 on:
   workflow_run:
-    workflows: ["compress-and-upload.yml"]
+    workflows: ["compress-and-upload"]
     types:
       - completed
 jobs:
