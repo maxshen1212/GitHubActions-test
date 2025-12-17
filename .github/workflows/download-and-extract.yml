@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["compress-and-upload.yml"]
     types:
-      - complete
+      - completed
 jobs:
   extract:
     runs-on: ubuntu-latest
