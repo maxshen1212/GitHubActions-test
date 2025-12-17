@@ -1,4 +1,4 @@
-name: compress-andupload
+name: compress-and-upload
 
 on:
   push:
