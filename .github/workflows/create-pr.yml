@@ -34,5 +34,5 @@ jobs:
       - name: push changes and create a Pull Request
         run: |
           git push -f origin update-branch
-        # gh auth login --with-token < ${{ secrets.GITHUB_TOKEN }}
+          gh auth login --with-token < ${{ secrets.GITHUB_TOKEN }}
         # gh pr create --title "Automated PR" --body "This is an automated PR created by GitHub Actions" --base main --head update-branch
