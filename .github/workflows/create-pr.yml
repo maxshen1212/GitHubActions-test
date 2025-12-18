@@ -2,16 +2,17 @@ name: create PR
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   create-pr:
     runs-on: ubuntu-latest
-
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: set Git
         run: |
@@ -19,20 +20,24 @@ jobs:
           git config --global user.email "actions@github.com"
 
       - name: install GitHub CLI
-        run: sudo apt-get install gh
-
-      - name: check branch
-        run: git branch
-      - name: create a new brench and modify files
         run: |
-          git branch update-branch
-          git checkout update-branch
-          echo "// Code change made by GitHub Actions aids" >> file.txt
+          sudo apt-get update
+          sudo apt-get install -y gh
+
+      - name: create a new branch and modify files
+        run: |
+          git checkout -b update-branch
+          echo "// Code change made by GitHub Actions" >> file.txt
           git add file.txt
           git commit -m "Automated commit by GitHub Actions"
 
       - name: push changes and create a Pull Request
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git push -f origin update-branch
-          gh auth login --with-token < ${{ secrets.GITHUB_TOKEN }}
-          gh pr create --title "Automated PR" --body "This is an automated PR created by GitHub Actions" --base main --head update-branch
+          gh pr create \
+            --title "Automated PR" \
+            --body "This is an automated PR created by GitHub Actions" \
+            --base main \
+            --head update-branch
