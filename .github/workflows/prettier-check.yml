@@ -20,11 +20,11 @@ jobs:
 
       - name: Run Prettier check
         id: prettier
-        run: npx prettier —check .
+        run: npx prettier —-check .
 
       - name: Run Prettier format (if needed)
         if: ${{ failure() }}
-        run: npx prettier —write .
+        run: npx prettier —-write .
 
       - name: Create Pull Request
         if: ${{ failure() }}
