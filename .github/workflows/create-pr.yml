@@ -23,6 +23,7 @@ jobs:
 
       - name: create a new brench and modify files
         run: |
+          git beanch update-branch
           git checkout update-branch
           echo "Code change made by GitHub Actions" >> file.txt
           git add file.txt
@@ -31,5 +32,6 @@ jobs:
       - name: push changes and create a Pull Request
         run: |
           git push origin update-branch
-          gh auth login --with-token < ${{ secrets.GITHUB_TOKEN }}
-          gh pr create --title "Automated PR" --body "This is an automated PR created by GitHub Actions" --base main --head update-branch
+
+        # gh auth login --with-token < ${{ secrets.GITHUB_TOKEN }}
+        # gh pr create --title "Automated PR" --body "This is an automated PR created by GitHub Actions" --base main --head update-branch
