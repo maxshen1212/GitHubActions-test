@@ -25,7 +25,7 @@ jobs:
         run: |
           git branch update-branch
           git checkout update-branch
-          echo "Code change made by GitHub Actions" >> file.txt
+          echo "// Code change made by GitHub Actions" >> file.txt
           git add file.txt
           git commit -m "Automated commit by GitHub Actions"
 
