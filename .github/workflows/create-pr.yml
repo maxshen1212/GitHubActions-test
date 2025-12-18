@@ -29,7 +29,7 @@ jobs:
           git checkout update-branch
           echo "// Code change made by GitHub Actions" >> file.txt
           git add file.txt
-          git commit -m "Automated commit by GitHub Actions"
+          git commit -m "Automated commit by GitHub Actions aids"
 
       - name: push changes and create a Pull Request
         run: |
