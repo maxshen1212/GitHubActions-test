@@ -21,8 +21,9 @@ jobs:
 
       - name: 解壓縮檔案
         run: |
-          tar -xzf compressed-files/files.tar.gz -C extracted  # 解壓縮到指定目錄
+          mkdir extracted
+          tar -xzf compressed-files/files.tar.gz -C extracted
 
       - name: 列出檔案
         run: |
-          ls -R extracted  # 列出解壓縮後的檔案
+          ls -R extracted
