@@ -17,6 +17,7 @@ jobs:
           name: compressed-files
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./compressed-files/
 
       - name: 解壓縮檔案
         run: |
