@@ -1,22 +1,25 @@
-name: download and extract
+name: 下載並解壓縮工件
 
 on:
   workflow_run:
-    workflows: ["compress-and-upload"]
+    workflows: ["壓縮並上傳為工件"]
     types:
       - completed
+
 jobs:
   extract:
     runs-on: ubuntu-latest
+
     steps:
-      - name: download artifact
-        uses: actions/download-artifact@v7
+      - name: 下載工件
+        uses: actions/download-artifact@v3
         with:
           name: compressed-files
-          path: compressed/files.tar.gz
-      - name: unzip file
+
+      - name: 解壓縮檔案
         run: |
-          tar -xzf compressed-files/files.tar.gz -C extracted
-      - name: print files
+          tar -xzf compressed-files/files.tar.gz -C extracted  # 解壓縮到指定目錄
+
+      - name: 列出檔案
         run: |
-          ls -R extracted
+          ls -R extracted  # 列出解壓縮後的檔案
