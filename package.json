@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/maxshen1212/GitHubActions-test#readme",
   "devDependencies": {
-    "jest": "^30.2.0"
+    "gts": "^7.0.0",
+    "jest": "^30.2.0",
+    "prettier": "^3.7.4"
   }
 }
