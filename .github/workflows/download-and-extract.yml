@@ -10,20 +10,20 @@ jobs:
   extract:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: 下載工件
-        uses: actions/download-artifact@v7
-        with:
-          name: compressed-files
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: ./compressed-files/
+    # steps:
+    #   - name: 下載工件
+    #     uses: actions/download-artifact@v7
+    #     with:
+    #       name: compressed-files
+    #       run-id: ${{ github.event.workflow_run.id }}
+    #       github-token: ${{ secrets.GITHUB_TOKEN }}
+    #       path: ./compressed-files/
 
-      - name: 解壓縮檔案
-        run: |
-          mkdir extracted
-          tar -xzf compressed-files/files.tar.gz -C extracted
+    #   - name: 解壓縮檔案
+    #     run: |
+    #       mkdir extracted
+    #       tar -xzf compressed-files/files.tar.gz -C extracted
 
-      - name: 列出檔案
-        run: |
-          ls -R extracted
+    #   - name: 列出檔案
+    #     run: |
+    #       ls -R extracted
