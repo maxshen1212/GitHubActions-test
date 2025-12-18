@@ -21,8 +21,8 @@ jobs:
         run: npx prettier --write .
       - name: push formatted code
         run: |
-          git config --global user.name "Chih-Han Shen"
           git config --global user.email "maxshen1212@gmail.com"
+          git config --global user.name "Chih-Han Shen"
           git add .
           git commit -m "Apply Prettier formatting"
           git push
