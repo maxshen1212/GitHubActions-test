@@ -13,6 +13,7 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: compressed-files
+          path: compressed/files.tar.gz
       - name: unzip file
         run: |
           tar -xzf compressed-files/files.tar.gz -C extracted
