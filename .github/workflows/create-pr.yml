@@ -23,7 +23,7 @@ jobs:
 
       - name: create a new brench and modify files
         run: |
-          git beanch update-branch
+          git branch update-branch
           git checkout update-branch
           echo "Code change made by GitHub Actions" >> file.txt
           git add file.txt
