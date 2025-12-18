@@ -1,21 +1,21 @@
 name: download and extract
 
 on:
-  workflow_run:
-    workflows: ["compress-and-upload"]
-    types:
-      - completed
+    workflow_run:
+        workflows: ["compress-and-upload"]
+        types:
+            - completed
 jobs:
-  extract:
-    runs-on: ubuntu-latest
-    steps:
-      - name: download artifact
-        uses: actions/download-artifact@v6
-        with:
-          name: compressed-files
-      - name: unzip file
-        run: |
-          tar -xzf compressed-files/files.tar.gz -C extracted
-      - name: print files
-        run: |
-          ls -R extracted
+    extract:
+        runs-on: ubuntu-latest
+        steps:
+            - name: download artifact
+              uses: actions/download-artifact@v6
+              with:
+                  name: compressed-files
+            - name: unzip file
+              run: |
+                  tar -xzf compressed-files/files.tar.gz -C extracted
+            - name: print files
+              run: |
+                  ls -R extracted
