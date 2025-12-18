@@ -23,8 +23,8 @@ jobs:
 
       - name: create a new brench and modify files
         run: |
-          git checkout -b update-branch
-          echo "// Code change made by GitHub Actions" >> file.txt
+          git checkout update-branch
+          echo "Code change made by GitHub Actions" >> file.txt
           git add file.txt
           git commit -m "Automated commit by GitHub Actions"
 
