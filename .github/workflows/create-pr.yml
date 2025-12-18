@@ -22,6 +22,8 @@ jobs:
         run: sudo apt-get install gh
 
       - name: create a new brench and modify files
+        run: git branch
+      - name: create a new brench and modify files
         run: |
           git branch update-branch
           git checkout update-branch
